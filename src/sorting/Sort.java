@@ -360,7 +360,10 @@ public final class Sort
 	      Random rand = new Random();
 	      int repeat = 100;
 	      
-	      long sortTime=0;
+	      long mergesortTime=0;
+	      long quicksortTime=0;
+	      long heapsortTime=0;
+	      long dualsortTime=0;
 	      long start, end;
 	      
 	//      merge sort
@@ -374,9 +377,9 @@ public final class Sort
 	      	Sort.mergeSort(keys);
 	      	end = System.currentTimeMillis();
 	      	
-	      	sortTime += (end-start); 
+	      	mergesortTime += (end-start); 
 	      }
-	      System.out.println("Avg time required for each merge sort in milis: "+(sortTime/repeat)+"\n");
+	      System.out.println("Avg time required for each merge sort in milis: "+(mergesortTime/repeat)+"\n");
 	      
 	      
 	      
@@ -391,9 +394,9 @@ public final class Sort
 	      	Sort.quicksort(keys);
 	      	end = System.currentTimeMillis();
 	      	
-	      	sortTime += (end-start); 
+	      	quicksortTime += (end-start); 
 	      }
-	      System.out.println("Avg time required for each quick sort in milis: "+(sortTime/repeat)+"\n");
+	      System.out.println("Avg time required for each quick sort in milis: "+(quicksortTime/repeat)+"\n");
 	      
 	      
 	//      Heap Sort
@@ -407,9 +410,9 @@ public final class Sort
 	      	Sort.heapsort(keys);
 	      	end = System.currentTimeMillis();
 	      	
-	      	sortTime += (end-start); 
+	      	heapsortTime += (end-start); 
 	      }
-	      System.out.println("Avg time required for each heapsort in milis: "+(sortTime/repeat)+"\n");
+	      System.out.println("Avg time required for each heapsort in milis: "+(heapsortTime/repeat)+"\n");
 	      
 	      
 	      
@@ -425,9 +428,9 @@ public final class Sort
 	    	Arrays.sort(keys);
 	    	end = System.currentTimeMillis();
 	    	
-	    	sortTime += (end-start); 
+	    	dualsortTime += (end-start); 
 	    }
-	    System.out.println("Avg time required for each Dual Pivot in milis: "+(sortTime/repeat)+"\n");
+	    System.out.println("Avg time required for each Dual Pivot in milis: "+(dualsortTime/repeat)+"\n");
     }
     
     public static void main( String [ ] args )
